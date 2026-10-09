@@ -4,7 +4,7 @@
        Flujos de datos → Web). Hasta entonces, los eventos se disparan
        pero no llegan a ninguna propiedad real.
    ==================================================================== */
-const GA4_ID = "G-XXXXXXXXXX";
+const GA4_ID = "G-P9T3WSJ4EW";
 
 (function () {
   const s = document.createElement("script");

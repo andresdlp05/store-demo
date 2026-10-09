@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Gracias por tu compra! — MediaLab Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js"></script>
+  <script src="analytics.js"></script>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand"><a href="#" id="home">MediaLab<b>Store</b></a></div>
+    <span class="badge">Tienda demo · prueba de tracking GA4</span>
+  </div></header>
+
+  <main class="wrap">
+    <section class="center">
+      <div class="tick">✓</div>
+      <h1>¡Gracias por tu compra!</h1>
+      <p id="detalle">Tu pedido de demostración se registró correctamente.</p>
+      <div class="note" id="nota"></div>
+      <div class="row" style="justify-content:center;margin-top:22px">
+        <a class="btn ghost" href="#" id="seguir">Seguir comprando</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">MediaLab Store · sitio de demostración para pruebas analíticas · sin transacciones reales.</div></footer>
+
+  <script>
+    const sku = getParam("sku");
+    const p = PRODUCTS[sku];
+    document.getElementById("home").href = linkCon("index.html");
+    document.getElementById("seguir").href = linkCon("index.html");
+
+    if (p) {
+      // transaction_id único por compra (demo).
+      const tx = "T-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+      // EVENTO 3 · purchase.
+      ga4.purchase(p, tx);
+      document.getElementById("detalle").textContent =
+        `Compraste: ${p.name} — ${fmt(p.price)}`;
+      document.getElementById("nota").textContent =
+        `Nº de pedido: ${tx} · SKU: ${p.sku} · destinatario (rcp): ${getRcp() || "(sin token)"}`;
+    } else {
+      document.getElementById("detalle").textContent = "No se encontró el producto de la compra.";
+    }
+  </script>
+</body>
+</html>

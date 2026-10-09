@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto — MediaLab Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js"></script>
+  <script src="analytics.js"></script>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand"><a href="#" id="home">MediaLab<b>Store</b></a></div>
+    <span class="badge">Tienda demo · prueba de tracking GA4</span>
+  </div></header>
+
+  <main class="wrap">
+    <a class="back" href="#" id="back">← Volver al catálogo</a>
+    <section class="pdp" id="pdp"></section>
+  </main>
+
+  <footer><div class="wrap">MediaLab Store · sitio de demostración para pruebas analíticas · sin transacciones reales.</div></footer>
+
+  <script>
+    const sku = getParam("sku");
+    const p = PRODUCTS[sku];
+    const pdp = document.getElementById("pdp");
+    document.getElementById("home").href = linkCon("index.html");
+    document.getElementById("back").href = linkCon("index.html");
+
+    if (!p) {
+      pdp.innerHTML = "<p>Producto no encontrado. <a href='" + linkCon("index.html") + "'>Ver catálogo</a>.</p>";
+    } else {
+      document.title = p.name + " — MediaLab Store";
+      pdp.innerHTML = `
+        <img src="${p.img}" alt="${p.name}" width="600" height="600">
+        <div>
+          <div class="cat">${p.cat}</div>
+          <h1>${p.name}</h1>
+          <div class="price">${fmt(p.price)}</div>
+          <p class="desc">${p.desc}</p>
+          <div class="row">
+            <button class="btn" id="buy">Comprar ahora</button>
+            <button class="btn ghost" id="cart">Agregar al carrito</button>
+          </div>
+          <div class="note">SKU: ${p.sku} · destinatario (rcp): ${getRcp() || "(sin token)"}</div>
+        </div>`;
+
+      // EVENTO 1 · view_item al cargar la ficha.
+      ga4.viewItem(p);
+
+      // EVENTO 2 · add_to_cart.
+      document.getElementById("cart").addEventListener("click", () => {
+        ga4.addToCart(p);
+        alert("Agregado al carrito (demo). Se registró el evento add_to_cart en GA4.");
+      });
+
+      // "Comprar" → add_to_cart + ir a gracias (que dispara purchase).
+      document.getElementById("buy").addEventListener("click", () => {
+        ga4.addToCart(p);
+        location.href = linkCon("gracias.html", { sku: p.sku });
+      });
+    }
+  </script>
+</body>
+</html>

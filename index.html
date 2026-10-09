@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediaLab Store — Tienda demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js"></script>
+  <script src="analytics.js"></script>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div class="brand">MediaLab<b>Store</b></div>
+    <span class="badge">Tienda demo · prueba de tracking GA4</span>
+  </div></header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Novedades de temporada</h1>
+      <p>Catálogo de demostración para medir la interacción con GA4. <span class="pill">Datos de prueba</span></p>
+    </section>
+    <section class="grid" id="grid"></section>
+  </main>
+
+  <footer><div class="wrap">MediaLab Store · sitio de demostración para pruebas analíticas · sin transacciones reales.</div></footer>
+
+  <script>
+    // Pinta las 4 tarjetas; cada enlace conserva rcp + UTM hacia la ficha de producto.
+    const grid = document.getElementById("grid");
+    grid.innerHTML = ORDER.map((sku) => {
+      const p = PRODUCTS[sku];
+      const href = linkCon("producto.html", { sku: p.sku });
+      return `<a class="card" href="${href}">
+        <img src="${p.img}" alt="${p.name}" width="600" height="600">
+        <div class="body">
+          <div class="cat">${p.cat}</div>
+          <div class="name">${p.name}</div>
+          <div class="price">${fmt(p.price)}</div>
+        </div></a>`;
+    }).join("");
+  </script>
+</body>
+</html>

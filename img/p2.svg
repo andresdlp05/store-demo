@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#E6EAF4"/>
+  <g fill="#3B4C9E" stroke="#27337A" stroke-width="6" stroke-linejoin="round">
+    <path d="M225 150 L375 150 L370 200 L385 470 L320 470 L300 240 L280 470 L215 470 L230 200 Z"/>
+  </g>
+  <rect x="225" y="150" width="150" height="28" fill="#27337A"/>
+  <text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#27337A">Jeans</text>
+</svg>

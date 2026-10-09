@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#E4EDF5"/>
+  <g fill="#4A77A8" stroke="#305780" stroke-width="6" stroke-linejoin="round">
+    <path d="M220 165 L285 165 L300 210 L315 165 L380 165 L420 215 L385 250 L380 460 L220 460 L215 250 L180 215 Z"/>
+    <path d="M300 210 L300 455" stroke="#305780" stroke-width="5" fill="none"/>
+  </g>
+  <text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#305780">Casaca denim</text>
+</svg>

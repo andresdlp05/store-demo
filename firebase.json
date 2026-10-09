@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "site": "medialab-store-demo",
+    "public": ".",
+    "cleanUrls": false,
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "*.md"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html|js|css|svg)",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ]
+  }
+}

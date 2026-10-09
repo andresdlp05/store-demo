@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#E8F1F0"/>
+  <g fill="#2E9E8F" stroke="#1F7568" stroke-width="6" stroke-linejoin="round">
+    <path d="M230 160 L190 200 L150 260 L200 300 L230 270 L230 460 L370 460 L370 270 L400 300 L450 260 L410 200 L370 160 L330 185 Q300 210 270 185 Z"/>
+  </g>
+  <text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#1F7568">Camiseta</text>
+</svg>

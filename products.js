@@ -1,13 +1,13 @@
 /* Catálogo de la tienda demo. Los SKU deben coincidir con los que el correo pone en la URL
    (?sku=...) y con los item_id que verás en GA4 / BigQuery. */
 const PRODUCTS = {
-  "SKU-001": { sku: "SKU-001", name: "Camiseta básica de algodón", price: 49.90,  img: "img/p1.svg", cat: "Camisetas",
+  "SKU-001": { sku: "SKU-001", name: "Camiseta básica de algodón", price: 49.90,  img: "img/p1.png", cat: "Camisetas",
                desc: "Camiseta de algodón peinado, corte regular. Suave y transpirable para el día a día." },
-  "SKU-002": { sku: "SKU-002", name: "Jeans slim fit",             price: 129.90, img: "img/p2.svg", cat: "Pantalones",
+  "SKU-002": { sku: "SKU-002", name: "Jeans slim fit",             price: 129.90, img: "img/p2.png", cat: "Pantalones",
                desc: "Denim elástico de tiro medio, corte slim. Cómodo y con buena recuperación." },
-  "SKU-003": { sku: "SKU-003", name: "Vestido midi plisado",       price: 159.90, img: "img/p3.svg", cat: "Vestidos",
+  "SKU-003": { sku: "SKU-003", name: "Vestido midi plisado",       price: 159.90, img: "img/p3.png", cat: "Vestidos",
                desc: "Vestido midi con falda plisada y cintura marcada. Ideal para ocasiones casuales y formales." },
-  "SKU-004": { sku: "SKU-004", name: "Casaca denim clásica",       price: 199.90, img: "img/p4.svg", cat: "Abrigos",
+  "SKU-004": { sku: "SKU-004", name: "Casaca denim clásica",       price: 199.90, img: "img/p4.png", cat: "Abrigos",
                desc: "Casaca de denim resistente con botones metálicos y bolsillos frontales. Un básico atemporal." },
 };
 const ORDER = ["SKU-001", "SKU-002", "SKU-003", "SKU-004"];
